@@ -1,6 +1,7 @@
 PROJECT(CompensateScatter)
 SET(
         SRC
+        scatter.cpp
 )
 ADD_LIBRARY(CompensateScatter SHARED ${SRC} scatter.cpp ../include/scatter.h)
 ADD_LIBRARY(CompensateScatter_STATIC STATIC ${SRC})

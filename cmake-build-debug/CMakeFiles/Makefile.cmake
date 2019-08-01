@@ -56,4 +56,6 @@ set(CMAKE_MAKEFILE_PRODUCTS
 
 # Dependency information for all targets:
 set(CMAKE_DEPEND_INFO_FILES
+  "src/CMakeFiles/CompensateScatter.dir/DependInfo.cmake"
+  "src/CMakeFiles/CompensateScatter_STATIC.dir/DependInfo.cmake"
   )

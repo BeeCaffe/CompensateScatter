@@ -68,12 +68,14 @@ CMAKE_BINARY_DIR = /home/caffe/CLionProjects/CompensateScatter/cmake-build-debug
 # Directory level rules for directory src
 
 # Convenience name for "all" pass in the directory.
-src/all:
+src/all: src/CMakeFiles/CompensateScatter.dir/all
+src/all: src/CMakeFiles/CompensateScatter_STATIC.dir/all
 
 .PHONY : src/all
 
 # Convenience name for "clean" pass in the directory.
-src/clean:
+src/clean: src/CMakeFiles/CompensateScatter.dir/clean
+src/clean: src/CMakeFiles/CompensateScatter_STATIC.dir/clean
 
 .PHONY : src/clean
 
@@ -81,6 +83,80 @@ src/clean:
 src/preinstall:
 
 .PHONY : src/preinstall
+
+#=============================================================================
+# Target rules for target src/CMakeFiles/CompensateScatter.dir
+
+# All Build rule for target.
+src/CMakeFiles/CompensateScatter.dir/all:
+	$(MAKE) -f src/CMakeFiles/CompensateScatter.dir/build.make src/CMakeFiles/CompensateScatter.dir/depend
+	$(MAKE) -f src/CMakeFiles/CompensateScatter.dir/build.make src/CMakeFiles/CompensateScatter.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/caffe/CLionProjects/CompensateScatter/cmake-build-debug/CMakeFiles --progress-num=1,2 "Built target CompensateScatter"
+.PHONY : src/CMakeFiles/CompensateScatter.dir/all
+
+# Include target in all.
+all: src/CMakeFiles/CompensateScatter.dir/all
+
+.PHONY : all
+
+# Build rule for subdir invocation for target.
+src/CMakeFiles/CompensateScatter.dir/rule: cmake_check_build_system
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/caffe/CLionProjects/CompensateScatter/cmake-build-debug/CMakeFiles 2
+	$(MAKE) -f CMakeFiles/Makefile2 src/CMakeFiles/CompensateScatter.dir/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/caffe/CLionProjects/CompensateScatter/cmake-build-debug/CMakeFiles 0
+.PHONY : src/CMakeFiles/CompensateScatter.dir/rule
+
+# Convenience name for target.
+CompensateScatter: src/CMakeFiles/CompensateScatter.dir/rule
+
+.PHONY : CompensateScatter
+
+# clean rule for target.
+src/CMakeFiles/CompensateScatter.dir/clean:
+	$(MAKE) -f src/CMakeFiles/CompensateScatter.dir/build.make src/CMakeFiles/CompensateScatter.dir/clean
+.PHONY : src/CMakeFiles/CompensateScatter.dir/clean
+
+# clean rule for target.
+clean: src/CMakeFiles/CompensateScatter.dir/clean
+
+.PHONY : clean
+
+#=============================================================================
+# Target rules for target src/CMakeFiles/CompensateScatter_STATIC.dir
+
+# All Build rule for target.
+src/CMakeFiles/CompensateScatter_STATIC.dir/all:
+	$(MAKE) -f src/CMakeFiles/CompensateScatter_STATIC.dir/build.make src/CMakeFiles/CompensateScatter_STATIC.dir/depend
+	$(MAKE) -f src/CMakeFiles/CompensateScatter_STATIC.dir/build.make src/CMakeFiles/CompensateScatter_STATIC.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/caffe/CLionProjects/CompensateScatter/cmake-build-debug/CMakeFiles --progress-num=3,4 "Built target CompensateScatter_STATIC"
+.PHONY : src/CMakeFiles/CompensateScatter_STATIC.dir/all
+
+# Include target in all.
+all: src/CMakeFiles/CompensateScatter_STATIC.dir/all
+
+.PHONY : all
+
+# Build rule for subdir invocation for target.
+src/CMakeFiles/CompensateScatter_STATIC.dir/rule: cmake_check_build_system
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/caffe/CLionProjects/CompensateScatter/cmake-build-debug/CMakeFiles 2
+	$(MAKE) -f CMakeFiles/Makefile2 src/CMakeFiles/CompensateScatter_STATIC.dir/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/caffe/CLionProjects/CompensateScatter/cmake-build-debug/CMakeFiles 0
+.PHONY : src/CMakeFiles/CompensateScatter_STATIC.dir/rule
+
+# Convenience name for target.
+CompensateScatter_STATIC: src/CMakeFiles/CompensateScatter_STATIC.dir/rule
+
+.PHONY : CompensateScatter_STATIC
+
+# clean rule for target.
+src/CMakeFiles/CompensateScatter_STATIC.dir/clean:
+	$(MAKE) -f src/CMakeFiles/CompensateScatter_STATIC.dir/build.make src/CMakeFiles/CompensateScatter_STATIC.dir/clean
+.PHONY : src/CMakeFiles/CompensateScatter_STATIC.dir/clean
+
+# clean rule for target.
+clean: src/CMakeFiles/CompensateScatter_STATIC.dir/clean
+
+.PHONY : clean
 
 #=============================================================================
 # Special targets to cleanup operation of make.

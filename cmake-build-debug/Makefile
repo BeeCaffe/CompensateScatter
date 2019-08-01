@@ -110,6 +110,32 @@ depend:
 	$(CMAKE_COMMAND) -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 1
 .PHONY : depend
 
+#=============================================================================
+# Target rules for targets named CompensateScatter
+
+# Build rule for target.
+CompensateScatter: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 CompensateScatter
+.PHONY : CompensateScatter
+
+# fast build rule for target.
+CompensateScatter/fast:
+	$(MAKE) -f src/CMakeFiles/CompensateScatter.dir/build.make src/CMakeFiles/CompensateScatter.dir/build
+.PHONY : CompensateScatter/fast
+
+#=============================================================================
+# Target rules for targets named CompensateScatter_STATIC
+
+# Build rule for target.
+CompensateScatter_STATIC: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 CompensateScatter_STATIC
+.PHONY : CompensateScatter_STATIC
+
+# fast build rule for target.
+CompensateScatter_STATIC/fast:
+	$(MAKE) -f src/CMakeFiles/CompensateScatter_STATIC.dir/build.make src/CMakeFiles/CompensateScatter_STATIC.dir/build
+.PHONY : CompensateScatter_STATIC/fast
+
 # Help Target
 help:
 	@echo "The following are some of the valid targets for this Makefile:"
@@ -118,6 +144,8 @@ help:
 	@echo "... depend"
 	@echo "... rebuild_cache"
 	@echo "... edit_cache"
+	@echo "... CompensateScatter"
+	@echo "... CompensateScatter_STATIC"
 .PHONY : help
 
 

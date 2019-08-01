@@ -56,17 +56,6 @@ CMAKE_BINARY_DIR = /home/caffe/CLionProjects/CompensateScatter/cmake-build-debug
 #=============================================================================
 # Targets provided globally by CMake.
 
-# Special rule for the target rebuild_cache
-rebuild_cache:
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Running CMake to regenerate build system..."
-	/home/caffe/clion-2019.1.4/bin/cmake/linux/bin/cmake -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR)
-.PHONY : rebuild_cache
-
-# Special rule for the target rebuild_cache
-rebuild_cache/fast: rebuild_cache
-
-.PHONY : rebuild_cache/fast
-
 # Special rule for the target edit_cache
 edit_cache:
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "No interactive CMake dialog available..."
@@ -77,6 +66,17 @@ edit_cache:
 edit_cache/fast: edit_cache
 
 .PHONY : edit_cache/fast
+
+# Special rule for the target rebuild_cache
+rebuild_cache:
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Running CMake to regenerate build system..."
+	/home/caffe/clion-2019.1.4/bin/cmake/linux/bin/cmake -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR)
+.PHONY : rebuild_cache
+
+# Special rule for the target rebuild_cache
+rebuild_cache/fast: rebuild_cache
+
+.PHONY : rebuild_cache/fast
 
 # The main all target
 all: cmake_check_build_system
@@ -110,14 +110,79 @@ depend:
 	cd /home/caffe/CLionProjects/CompensateScatter/cmake-build-debug && $(CMAKE_COMMAND) -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 1
 .PHONY : depend
 
+# Convenience name for target.
+src/CMakeFiles/CompensateScatter.dir/rule:
+	cd /home/caffe/CLionProjects/CompensateScatter/cmake-build-debug && $(MAKE) -f CMakeFiles/Makefile2 src/CMakeFiles/CompensateScatter.dir/rule
+.PHONY : src/CMakeFiles/CompensateScatter.dir/rule
+
+# Convenience name for target.
+CompensateScatter: src/CMakeFiles/CompensateScatter.dir/rule
+
+.PHONY : CompensateScatter
+
+# fast build rule for target.
+CompensateScatter/fast:
+	cd /home/caffe/CLionProjects/CompensateScatter/cmake-build-debug && $(MAKE) -f src/CMakeFiles/CompensateScatter.dir/build.make src/CMakeFiles/CompensateScatter.dir/build
+.PHONY : CompensateScatter/fast
+
+# Convenience name for target.
+src/CMakeFiles/CompensateScatter_STATIC.dir/rule:
+	cd /home/caffe/CLionProjects/CompensateScatter/cmake-build-debug && $(MAKE) -f CMakeFiles/Makefile2 src/CMakeFiles/CompensateScatter_STATIC.dir/rule
+.PHONY : src/CMakeFiles/CompensateScatter_STATIC.dir/rule
+
+# Convenience name for target.
+CompensateScatter_STATIC: src/CMakeFiles/CompensateScatter_STATIC.dir/rule
+
+.PHONY : CompensateScatter_STATIC
+
+# fast build rule for target.
+CompensateScatter_STATIC/fast:
+	cd /home/caffe/CLionProjects/CompensateScatter/cmake-build-debug && $(MAKE) -f src/CMakeFiles/CompensateScatter_STATIC.dir/build.make src/CMakeFiles/CompensateScatter_STATIC.dir/build
+.PHONY : CompensateScatter_STATIC/fast
+
+scatter.o: scatter.cpp.o
+
+.PHONY : scatter.o
+
+# target to build an object file
+scatter.cpp.o:
+	cd /home/caffe/CLionProjects/CompensateScatter/cmake-build-debug && $(MAKE) -f src/CMakeFiles/CompensateScatter.dir/build.make src/CMakeFiles/CompensateScatter.dir/scatter.cpp.o
+	cd /home/caffe/CLionProjects/CompensateScatter/cmake-build-debug && $(MAKE) -f src/CMakeFiles/CompensateScatter_STATIC.dir/build.make src/CMakeFiles/CompensateScatter_STATIC.dir/scatter.cpp.o
+.PHONY : scatter.cpp.o
+
+scatter.i: scatter.cpp.i
+
+.PHONY : scatter.i
+
+# target to preprocess a source file
+scatter.cpp.i:
+	cd /home/caffe/CLionProjects/CompensateScatter/cmake-build-debug && $(MAKE) -f src/CMakeFiles/CompensateScatter.dir/build.make src/CMakeFiles/CompensateScatter.dir/scatter.cpp.i
+	cd /home/caffe/CLionProjects/CompensateScatter/cmake-build-debug && $(MAKE) -f src/CMakeFiles/CompensateScatter_STATIC.dir/build.make src/CMakeFiles/CompensateScatter_STATIC.dir/scatter.cpp.i
+.PHONY : scatter.cpp.i
+
+scatter.s: scatter.cpp.s
+
+.PHONY : scatter.s
+
+# target to generate assembly for a file
+scatter.cpp.s:
+	cd /home/caffe/CLionProjects/CompensateScatter/cmake-build-debug && $(MAKE) -f src/CMakeFiles/CompensateScatter.dir/build.make src/CMakeFiles/CompensateScatter.dir/scatter.cpp.s
+	cd /home/caffe/CLionProjects/CompensateScatter/cmake-build-debug && $(MAKE) -f src/CMakeFiles/CompensateScatter_STATIC.dir/build.make src/CMakeFiles/CompensateScatter_STATIC.dir/scatter.cpp.s
+.PHONY : scatter.cpp.s
+
 # Help Target
 help:
 	@echo "The following are some of the valid targets for this Makefile:"
 	@echo "... all (the default if no target is provided)"
 	@echo "... clean"
 	@echo "... depend"
-	@echo "... rebuild_cache"
 	@echo "... edit_cache"
+	@echo "... CompensateScatter"
+	@echo "... rebuild_cache"
+	@echo "... CompensateScatter_STATIC"
+	@echo "... scatter.o"
+	@echo "... scatter.i"
+	@echo "... scatter.s"
 .PHONY : help
 
 

@@ -1,0 +1,1 @@
+/usr/bin/c++ -fPIC -g  -shared -Wl,-soname,libCompensateScatter.so -o ../lib/libCompensateScatter.so CMakeFiles/CompensateScatter.dir/scatter.cpp.o  -L/home/caffe/CLionProjects/CompensateScatter/cmake-build-debug/lib 

@@ -1,7 +1,4 @@
 /home/caffe/clion-2019.1.4/bin/cmake/linux/bin/cmake -DCMAKE_BUILD_TYPE=Debug -G "CodeBlocks - Unix Makefiles" /home/caffe/CLionProjects/CompensateScatter
 -- Configuring done
-CMake Error at src/CMakeLists.txt:6 (ADD_LIBRARY):
-  No SOURCES given to target: CompensateScatter_STATIC
-
-
+-- Generating done
 -- Build files have been written to: /home/caffe/CLionProjects/CompensateScatter/cmake-build-debug
