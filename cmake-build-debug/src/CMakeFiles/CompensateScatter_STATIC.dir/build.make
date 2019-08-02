@@ -70,17 +70,32 @@ src/CMakeFiles/CompensateScatter_STATIC.dir/scatter.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/CompensateScatter_STATIC.dir/scatter.cpp.s"
 	cd /home/caffe/CLionProjects/CompensateScatter/cmake-build-debug/src && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/caffe/CLionProjects/CompensateScatter/src/scatter.cpp -o CMakeFiles/CompensateScatter_STATIC.dir/scatter.cpp.s
 
+src/CMakeFiles/CompensateScatter_STATIC.dir/utils.cpp.o: src/CMakeFiles/CompensateScatter_STATIC.dir/flags.make
+src/CMakeFiles/CompensateScatter_STATIC.dir/utils.cpp.o: ../src/utils.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/caffe/CLionProjects/CompensateScatter/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object src/CMakeFiles/CompensateScatter_STATIC.dir/utils.cpp.o"
+	cd /home/caffe/CLionProjects/CompensateScatter/cmake-build-debug/src && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/CompensateScatter_STATIC.dir/utils.cpp.o -c /home/caffe/CLionProjects/CompensateScatter/src/utils.cpp
+
+src/CMakeFiles/CompensateScatter_STATIC.dir/utils.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/CompensateScatter_STATIC.dir/utils.cpp.i"
+	cd /home/caffe/CLionProjects/CompensateScatter/cmake-build-debug/src && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/caffe/CLionProjects/CompensateScatter/src/utils.cpp > CMakeFiles/CompensateScatter_STATIC.dir/utils.cpp.i
+
+src/CMakeFiles/CompensateScatter_STATIC.dir/utils.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/CompensateScatter_STATIC.dir/utils.cpp.s"
+	cd /home/caffe/CLionProjects/CompensateScatter/cmake-build-debug/src && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/caffe/CLionProjects/CompensateScatter/src/utils.cpp -o CMakeFiles/CompensateScatter_STATIC.dir/utils.cpp.s
+
 # Object files for target CompensateScatter_STATIC
 CompensateScatter_STATIC_OBJECTS = \
-"CMakeFiles/CompensateScatter_STATIC.dir/scatter.cpp.o"
+"CMakeFiles/CompensateScatter_STATIC.dir/scatter.cpp.o" \
+"CMakeFiles/CompensateScatter_STATIC.dir/utils.cpp.o"
 
 # External object files for target CompensateScatter_STATIC
 CompensateScatter_STATIC_EXTERNAL_OBJECTS =
 
 lib/libCompensateScatter.a: src/CMakeFiles/CompensateScatter_STATIC.dir/scatter.cpp.o
+lib/libCompensateScatter.a: src/CMakeFiles/CompensateScatter_STATIC.dir/utils.cpp.o
 lib/libCompensateScatter.a: src/CMakeFiles/CompensateScatter_STATIC.dir/build.make
 lib/libCompensateScatter.a: src/CMakeFiles/CompensateScatter_STATIC.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/caffe/CLionProjects/CompensateScatter/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Linking CXX static library ../lib/libCompensateScatter.a"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/caffe/CLionProjects/CompensateScatter/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Linking CXX static library ../lib/libCompensateScatter.a"
 	cd /home/caffe/CLionProjects/CompensateScatter/cmake-build-debug/src && $(CMAKE_COMMAND) -P CMakeFiles/CompensateScatter_STATIC.dir/cmake_clean_target.cmake
 	cd /home/caffe/CLionProjects/CompensateScatter/cmake-build-debug/src && $(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/CompensateScatter_STATIC.dir/link.txt --verbose=$(VERBOSE)
 

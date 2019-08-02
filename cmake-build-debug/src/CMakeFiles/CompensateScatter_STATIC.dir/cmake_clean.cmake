@@ -1,5 +1,6 @@
 file(REMOVE_RECURSE
   "CMakeFiles/CompensateScatter_STATIC.dir/scatter.cpp.o"
+  "CMakeFiles/CompensateScatter_STATIC.dir/utils.cpp.o"
   "../lib/libCompensateScatter.pdb"
   "../lib/libCompensateScatter.a"
 )

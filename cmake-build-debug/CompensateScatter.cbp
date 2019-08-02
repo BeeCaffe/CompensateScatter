@@ -5,7 +5,7 @@
 		<Option title="CompensateScatter"/>
 		<Option makefile_is_custom="1"/>
 		<Option compiler="gcc"/>
-		<Option virtualFolders="CMake Files\;CMake Files\..\;CMake Files\..\..\;CMake Files\..\..\..\;CMake Files\..\..\..\..\;CMake Files\..\..\..\..\usr\;CMake Files\..\..\..\..\usr\local\;CMake Files\..\..\..\..\usr\local\share\;CMake Files\..\..\..\..\usr\local\share\OpenCV\;CMake Files\src\;"/>
+		<Option virtualFolders="CMake Files\;CMake Files\..\;CMake Files\..\..\;CMake Files\..\..\..\;CMake Files\..\..\..\..\;CMake Files\..\..\..\..\usr\;CMake Files\..\..\..\..\usr\local\;CMake Files\..\..\..\..\usr\local\share\;CMake Files\..\..\..\..\usr\local\share\OpenCV\;CMake Files\src\;CMake Files\test\;CMake Files\main\;"/>
 		<Build>
 			<Target title="all">
 				<Option working_dir="/home/caffe/CLionProjects/CompensateScatter/cmake-build-debug"/>
@@ -45,6 +45,7 @@
 				<Option compiler="gcc"/>
 				<Compiler>
 					<Add directory="/home/caffe/CLionProjects/CompensateScatter/include"/>
+					<Add directory="/usr/local/include/opencv"/>
 					<Add directory="/usr/include/c++/8"/>
 					<Add directory="/usr/include/x86_64-linux-gnu/c++/8"/>
 					<Add directory="/usr/include/c++/8/backward"/>
@@ -69,6 +70,7 @@
 				<Option compiler="gcc"/>
 				<Compiler>
 					<Add directory="/home/caffe/CLionProjects/CompensateScatter/include"/>
+					<Add directory="/usr/local/include/opencv"/>
 					<Add directory="/usr/include/c++/8"/>
 					<Add directory="/usr/include/x86_64-linux-gnu/c++/8"/>
 					<Add directory="/usr/include/c++/8/backward"/>
@@ -133,13 +135,121 @@
 					<DistClean command="/usr/bin/make -j8 -f &quot;/home/caffe/CLionProjects/CompensateScatter/cmake-build-debug/src/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
+			<Target title="scatter">
+				<Option output="/home/caffe/CLionProjects/CompensateScatter/cmake-build-debug/bin/scatter" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/home/caffe/CLionProjects/CompensateScatter/cmake-build-debug/bin"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="/home/caffe/CLionProjects/CompensateScatter/include"/>
+					<Add directory="/usr/local/include/opencv"/>
+					<Add directory="/usr/include/c++/8"/>
+					<Add directory="/usr/include/x86_64-linux-gnu/c++/8"/>
+					<Add directory="/usr/include/c++/8/backward"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/8/include"/>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/8/include-fixed"/>
+					<Add directory="/usr/include/x86_64-linux-gnu"/>
+					<Add directory="/usr/include"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j8 -f &quot;/home/caffe/CLionProjects/CompensateScatter/cmake-build-debug/test/Makefile&quot;  VERBOSE=1 scatter"/>
+					<CompileFile command="/usr/bin/make -j8 -f &quot;/home/caffe/CLionProjects/CompensateScatter/cmake-build-debug/test/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j8 -f &quot;/home/caffe/CLionProjects/CompensateScatter/cmake-build-debug/test/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j8 -f &quot;/home/caffe/CLionProjects/CompensateScatter/cmake-build-debug/test/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="scatter/fast">
+				<Option output="/home/caffe/CLionProjects/CompensateScatter/cmake-build-debug/bin/scatter" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/home/caffe/CLionProjects/CompensateScatter/cmake-build-debug/bin"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="/home/caffe/CLionProjects/CompensateScatter/include"/>
+					<Add directory="/usr/local/include/opencv"/>
+					<Add directory="/usr/include/c++/8"/>
+					<Add directory="/usr/include/x86_64-linux-gnu/c++/8"/>
+					<Add directory="/usr/include/c++/8/backward"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/8/include"/>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/8/include-fixed"/>
+					<Add directory="/usr/include/x86_64-linux-gnu"/>
+					<Add directory="/usr/include"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j8 -f &quot;/home/caffe/CLionProjects/CompensateScatter/cmake-build-debug/test/Makefile&quot;  VERBOSE=1 scatter/fast"/>
+					<CompileFile command="/usr/bin/make -j8 -f &quot;/home/caffe/CLionProjects/CompensateScatter/cmake-build-debug/test/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j8 -f &quot;/home/caffe/CLionProjects/CompensateScatter/cmake-build-debug/test/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j8 -f &quot;/home/caffe/CLionProjects/CompensateScatter/cmake-build-debug/test/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="main">
+				<Option output="/home/caffe/CLionProjects/CompensateScatter/cmake-build-debug/bin/main" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/home/caffe/CLionProjects/CompensateScatter/cmake-build-debug/bin"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="/home/caffe/CLionProjects/CompensateScatter/include"/>
+					<Add directory="/usr/local/include/opencv"/>
+					<Add directory="/usr/include/c++/8"/>
+					<Add directory="/usr/include/x86_64-linux-gnu/c++/8"/>
+					<Add directory="/usr/include/c++/8/backward"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/8/include"/>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/8/include-fixed"/>
+					<Add directory="/usr/include/x86_64-linux-gnu"/>
+					<Add directory="/usr/include"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j8 -f &quot;/home/caffe/CLionProjects/CompensateScatter/cmake-build-debug/main/Makefile&quot;  VERBOSE=1 main"/>
+					<CompileFile command="/usr/bin/make -j8 -f &quot;/home/caffe/CLionProjects/CompensateScatter/cmake-build-debug/main/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j8 -f &quot;/home/caffe/CLionProjects/CompensateScatter/cmake-build-debug/main/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j8 -f &quot;/home/caffe/CLionProjects/CompensateScatter/cmake-build-debug/main/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="main/fast">
+				<Option output="/home/caffe/CLionProjects/CompensateScatter/cmake-build-debug/bin/main" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/home/caffe/CLionProjects/CompensateScatter/cmake-build-debug/bin"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="/home/caffe/CLionProjects/CompensateScatter/include"/>
+					<Add directory="/usr/local/include/opencv"/>
+					<Add directory="/usr/include/c++/8"/>
+					<Add directory="/usr/include/x86_64-linux-gnu/c++/8"/>
+					<Add directory="/usr/include/c++/8/backward"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/8/include"/>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/8/include-fixed"/>
+					<Add directory="/usr/include/x86_64-linux-gnu"/>
+					<Add directory="/usr/include"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j8 -f &quot;/home/caffe/CLionProjects/CompensateScatter/cmake-build-debug/main/Makefile&quot;  VERBOSE=1 main/fast"/>
+					<CompileFile command="/usr/bin/make -j8 -f &quot;/home/caffe/CLionProjects/CompensateScatter/cmake-build-debug/main/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j8 -f &quot;/home/caffe/CLionProjects/CompensateScatter/cmake-build-debug/main/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j8 -f &quot;/home/caffe/CLionProjects/CompensateScatter/cmake-build-debug/main/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
 		</Build>
-		<Unit filename="/home/caffe/CLionProjects/CompensateScatter/include/scatter.h">
+		<Unit filename="/home/caffe/CLionProjects/CompensateScatter/main/main.cpp">
 			<Option target="CompensateScatter"/>
+			<Option target="main"/>
 		</Unit>
 		<Unit filename="/home/caffe/CLionProjects/CompensateScatter/src/scatter.cpp">
 			<Option target="CompensateScatter"/>
 			<Option target="CompensateScatter_STATIC"/>
+		</Unit>
+		<Unit filename="/home/caffe/CLionProjects/CompensateScatter/src/utils.cpp">
+			<Option target="CompensateScatter"/>
+			<Option target="CompensateScatter_STATIC"/>
+		</Unit>
+		<Unit filename="/home/caffe/CLionProjects/CompensateScatter/test/scatterTest.cpp">
+			<Option target="scatter"/>
 		</Unit>
 		<Unit filename="/home/caffe/CLionProjects/CompensateScatter/CMakeLists.txt">
 			<Option virtualFolder="CMake Files\"/>
@@ -158,6 +268,12 @@
 		</Unit>
 		<Unit filename="/home/caffe/CLionProjects/CompensateScatter/src/CMakeLists.txt">
 			<Option virtualFolder="CMake Files\src\"/>
+		</Unit>
+		<Unit filename="/home/caffe/CLionProjects/CompensateScatter/test/CMakeLists.txt">
+			<Option virtualFolder="CMake Files\test\"/>
+		</Unit>
+		<Unit filename="/home/caffe/CLionProjects/CompensateScatter/main/CMakeLists.txt">
+			<Option virtualFolder="CMake Files\main\"/>
 		</Unit>
 	</Project>
 </CodeBlocks_project_file>

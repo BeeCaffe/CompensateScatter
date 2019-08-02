@@ -140,6 +140,33 @@ CompensateScatter_STATIC/fast:
 	cd /home/caffe/CLionProjects/CompensateScatter/cmake-build-debug && $(MAKE) -f src/CMakeFiles/CompensateScatter_STATIC.dir/build.make src/CMakeFiles/CompensateScatter_STATIC.dir/build
 .PHONY : CompensateScatter_STATIC/fast
 
+__/main/main.o: __/main/main.cpp.o
+
+.PHONY : __/main/main.o
+
+# target to build an object file
+__/main/main.cpp.o:
+	cd /home/caffe/CLionProjects/CompensateScatter/cmake-build-debug && $(MAKE) -f src/CMakeFiles/CompensateScatter.dir/build.make src/CMakeFiles/CompensateScatter.dir/__/main/main.cpp.o
+.PHONY : __/main/main.cpp.o
+
+__/main/main.i: __/main/main.cpp.i
+
+.PHONY : __/main/main.i
+
+# target to preprocess a source file
+__/main/main.cpp.i:
+	cd /home/caffe/CLionProjects/CompensateScatter/cmake-build-debug && $(MAKE) -f src/CMakeFiles/CompensateScatter.dir/build.make src/CMakeFiles/CompensateScatter.dir/__/main/main.cpp.i
+.PHONY : __/main/main.cpp.i
+
+__/main/main.s: __/main/main.cpp.s
+
+.PHONY : __/main/main.s
+
+# target to generate assembly for a file
+__/main/main.cpp.s:
+	cd /home/caffe/CLionProjects/CompensateScatter/cmake-build-debug && $(MAKE) -f src/CMakeFiles/CompensateScatter.dir/build.make src/CMakeFiles/CompensateScatter.dir/__/main/main.cpp.s
+.PHONY : __/main/main.cpp.s
+
 scatter.o: scatter.cpp.o
 
 .PHONY : scatter.o
@@ -170,6 +197,36 @@ scatter.cpp.s:
 	cd /home/caffe/CLionProjects/CompensateScatter/cmake-build-debug && $(MAKE) -f src/CMakeFiles/CompensateScatter_STATIC.dir/build.make src/CMakeFiles/CompensateScatter_STATIC.dir/scatter.cpp.s
 .PHONY : scatter.cpp.s
 
+utils.o: utils.cpp.o
+
+.PHONY : utils.o
+
+# target to build an object file
+utils.cpp.o:
+	cd /home/caffe/CLionProjects/CompensateScatter/cmake-build-debug && $(MAKE) -f src/CMakeFiles/CompensateScatter.dir/build.make src/CMakeFiles/CompensateScatter.dir/utils.cpp.o
+	cd /home/caffe/CLionProjects/CompensateScatter/cmake-build-debug && $(MAKE) -f src/CMakeFiles/CompensateScatter_STATIC.dir/build.make src/CMakeFiles/CompensateScatter_STATIC.dir/utils.cpp.o
+.PHONY : utils.cpp.o
+
+utils.i: utils.cpp.i
+
+.PHONY : utils.i
+
+# target to preprocess a source file
+utils.cpp.i:
+	cd /home/caffe/CLionProjects/CompensateScatter/cmake-build-debug && $(MAKE) -f src/CMakeFiles/CompensateScatter.dir/build.make src/CMakeFiles/CompensateScatter.dir/utils.cpp.i
+	cd /home/caffe/CLionProjects/CompensateScatter/cmake-build-debug && $(MAKE) -f src/CMakeFiles/CompensateScatter_STATIC.dir/build.make src/CMakeFiles/CompensateScatter_STATIC.dir/utils.cpp.i
+.PHONY : utils.cpp.i
+
+utils.s: utils.cpp.s
+
+.PHONY : utils.s
+
+# target to generate assembly for a file
+utils.cpp.s:
+	cd /home/caffe/CLionProjects/CompensateScatter/cmake-build-debug && $(MAKE) -f src/CMakeFiles/CompensateScatter.dir/build.make src/CMakeFiles/CompensateScatter.dir/utils.cpp.s
+	cd /home/caffe/CLionProjects/CompensateScatter/cmake-build-debug && $(MAKE) -f src/CMakeFiles/CompensateScatter_STATIC.dir/build.make src/CMakeFiles/CompensateScatter_STATIC.dir/utils.cpp.s
+.PHONY : utils.cpp.s
+
 # Help Target
 help:
 	@echo "The following are some of the valid targets for this Makefile:"
@@ -180,9 +237,15 @@ help:
 	@echo "... CompensateScatter"
 	@echo "... rebuild_cache"
 	@echo "... CompensateScatter_STATIC"
+	@echo "... __/main/main.o"
+	@echo "... __/main/main.i"
+	@echo "... __/main/main.s"
 	@echo "... scatter.o"
 	@echo "... scatter.i"
 	@echo "... scatter.s"
+	@echo "... utils.o"
+	@echo "... utils.i"
+	@echo "... utils.s"
 .PHONY : help
 
 

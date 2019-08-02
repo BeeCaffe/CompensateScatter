@@ -4,3 +4,9 @@
 /home/caffe/CLionProjects/CompensateScatter/cmake-build-debug/src/CMakeFiles/CompensateScatter.dir
 /home/caffe/CLionProjects/CompensateScatter/cmake-build-debug/src/CMakeFiles/rebuild_cache.dir
 /home/caffe/CLionProjects/CompensateScatter/cmake-build-debug/src/CMakeFiles/CompensateScatter_STATIC.dir
+/home/caffe/CLionProjects/CompensateScatter/cmake-build-debug/test/CMakeFiles/rebuild_cache.dir
+/home/caffe/CLionProjects/CompensateScatter/cmake-build-debug/test/CMakeFiles/scatter.dir
+/home/caffe/CLionProjects/CompensateScatter/cmake-build-debug/test/CMakeFiles/edit_cache.dir
+/home/caffe/CLionProjects/CompensateScatter/cmake-build-debug/main/CMakeFiles/rebuild_cache.dir
+/home/caffe/CLionProjects/CompensateScatter/cmake-build-debug/main/CMakeFiles/main.dir
+/home/caffe/CLionProjects/CompensateScatter/cmake-build-debug/main/CMakeFiles/edit_cache.dir

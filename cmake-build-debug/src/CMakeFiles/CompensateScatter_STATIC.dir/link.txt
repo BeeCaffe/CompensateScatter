@@ -1,2 +1,2 @@
-/usr/bin/ar qc ../lib/libCompensateScatter.a  CMakeFiles/CompensateScatter_STATIC.dir/scatter.cpp.o
+/usr/bin/ar qc ../lib/libCompensateScatter.a  CMakeFiles/CompensateScatter_STATIC.dir/scatter.cpp.o CMakeFiles/CompensateScatter_STATIC.dir/utils.cpp.o
 /usr/bin/ranlib ../lib/libCompensateScatter.a

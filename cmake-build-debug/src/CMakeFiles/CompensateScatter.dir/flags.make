@@ -6,5 +6,5 @@ CXX_FLAGS = -g -fPIC   -std=gnu++14
 
 CXX_DEFINES = -DCompensateScatter_EXPORTS
 
-CXX_INCLUDES = -I/home/caffe/CLionProjects/CompensateScatter/include 
+CXX_INCLUDES = -I/home/caffe/CLionProjects/CompensateScatter/include -isystem /usr/local/include/opencv 
 

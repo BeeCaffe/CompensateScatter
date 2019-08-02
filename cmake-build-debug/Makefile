@@ -136,6 +136,32 @@ CompensateScatter_STATIC/fast:
 	$(MAKE) -f src/CMakeFiles/CompensateScatter_STATIC.dir/build.make src/CMakeFiles/CompensateScatter_STATIC.dir/build
 .PHONY : CompensateScatter_STATIC/fast
 
+#=============================================================================
+# Target rules for targets named scatter
+
+# Build rule for target.
+scatter: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 scatter
+.PHONY : scatter
+
+# fast build rule for target.
+scatter/fast:
+	$(MAKE) -f test/CMakeFiles/scatter.dir/build.make test/CMakeFiles/scatter.dir/build
+.PHONY : scatter/fast
+
+#=============================================================================
+# Target rules for targets named main
+
+# Build rule for target.
+main: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 main
+.PHONY : main
+
+# fast build rule for target.
+main/fast:
+	$(MAKE) -f main/CMakeFiles/main.dir/build.make main/CMakeFiles/main.dir/build
+.PHONY : main/fast
+
 # Help Target
 help:
 	@echo "The following are some of the valid targets for this Makefile:"
@@ -146,6 +172,8 @@ help:
 	@echo "... edit_cache"
 	@echo "... CompensateScatter"
 	@echo "... CompensateScatter_STATIC"
+	@echo "... scatter"
+	@echo "... main"
 .PHONY : help
 
 

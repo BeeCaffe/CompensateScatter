@@ -1,0 +1,9 @@
+ImageWidth=1024
+ImageHeight=768
+ScreenWidth=0.47
+ScreenHeight=0.18
+ScreenMiddleHeight=0.255
+CenterDistance=0.55
+PatchSize=16
+ImagesRoot=resources/images/
+ImagesSaveRoot=resources/compensated/
