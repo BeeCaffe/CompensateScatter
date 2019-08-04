@@ -23,6 +23,8 @@ sys/stat.h
 -
 vector
 -
+Eigen/Dense
+/home/caffe/CLionProjects/CompensateScatter/include/Eigen/Dense
 
 /home/caffe/CLionProjects/CompensateScatter/include/utils.h
 map

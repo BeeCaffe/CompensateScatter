@@ -30,6 +30,8 @@ Scatter::Scatter(){
     if(!access(saveRoot.c_str(),0)){
         mkdir(saveRoot.c_str(),0775);
     }
+    onePatchF();
+    doublePatchF();
 }
 
 /**
@@ -46,13 +48,12 @@ void Scatter::onePatchF(){
         float d = sqrt(-(1.1*(screenWidth/2.-xi)*0.5253-(screenWidth/2.-xi)*(screenWidth/2.-xi)-pow(.55,2)));
         float ri=sqrt(d*d+yi*yi);
         float alpha_i=PI/2-atan(d/yi);
-        float dA=detaX*(detaYMd+detaYEd)/2.;
+        float dA=1./(u*v);
         float ftmp=dA*cos(alpha_i)/(ri*ri*PI);
         int col=i%u;
         int row=i/u;
         Fi(row,col)=f*ftmp;
     }
-//    std::cout<<Fi<<std::endl;
 }
 
 /**
@@ -63,27 +64,45 @@ void Scatter::onePatchF(){
  */
 void Scatter::doublePatchF() {
     Fij=Eigen::MatrixXf(u*v,u*v);
+    float di,dj,rij,dA,ftmp,beta_i,beta_j,alpha_i,alpha_j;
     for(size_t i=0;i<u*v;i++){
         for(size_t j=0;j<u*v;j++){
             if(i==j){
                 Fij(i,j)=0.;
             } else{
-                if((i/u<u/2 && j/u>u/2) || (i/u>u/2 && j/u<u/2)){
-                    float_t xi=imWidth/2.-(i%u)*detaX+detaX/2.;
-                    float_t xj=imWidth/2.+(j%u)*detaX+detaX/2.;
-                    float_t rij=sqrt(xi*xi+xj*xj);
-                    float_t alpha_i=PI/2.-atan(xi/xj);
-                    float_t alpha_j=PI/2.-atan(xj/xi);
-                    float_t dAi=cos(atan(xi/xj))*detaX*(detaYEd+detaYMd)/2.;
-                    float_t ftmp=dAi*cos(alpha_i)*cos(alpha_j)/(rij*rij*PI);
-                    Fij(i,j)=f*ftmp;
-                } else{
-                    float_t xi=0;
+                if((i%u<=u/2 && j%u>=u/2)){
+                    di=screenWidth/2-(i%u)*detaX-detaX/2.;
+                    dj=(j%u-u/2)*detaX+detaX/2;
+                    rij=sqrt(di*di+dj*dj);
+                    beta_i=atan(dj/di);
+                    beta_j=atan(di/dj);
+                    alpha_i=PI/2-beta_i;
+                    alpha_j=PI/2-beta_j;
+                    dA=1./(u*v);
+                    ftmp=dA*cos(alpha_i)*cos(alpha_j)/(rij*rij*PI);
+                    Fij(i,j)=ftmp;
+                } else if((i%u>=u/2 && j%u<=u/2)){
+                    dj=screenWidth/2-(j%u)*detaX-detaX/2.;
+                    di=(i%u-u/2)*detaX+detaX/2;
+                    rij=sqrt(di*di+dj*dj);
+                    beta_i=atan(dj/di);
+                    beta_j=atan(di/dj);
+                    alpha_i=PI/2-beta_i;
+                    alpha_j=PI/2-beta_j;
+                    dA=1./(u*v);
+                    ftmp=dA*cos(alpha_i)*cos(alpha_j)/(rij*rij*PI);
+                    Fij(i,j)=ftmp;
+                }
+                else{
+                    Fij(i,j)=0;
                 }
             }
         }
     }
-    std::cout<<Fij<<std::endl;
+    for(size_t i=0;i<u*v;i++){
+        float sum=Fij.row(i).sum();
+        Fij.row(i)/=sum;
+    }
 }
 
 /**
@@ -93,8 +112,6 @@ void Scatter::doublePatchF() {
  * @return S : the scatter matrix and saved in a cv::Mat.
  */
 cv::Mat Scatter::computeScatter(const cv::Mat& I){
-    onePatchF();
-    doublePatchF();
     cv::Mat S=cv::Mat(imHeight,imWidth,CV_32FC3,cv::Scalar(0.));
     time_t staTm=time((time_t*)NULL);
     printf("Computing S : \n");
@@ -106,6 +123,16 @@ cv::Mat Scatter::computeScatter(const cv::Mat& I){
         }
         time_t endTm=time((time_t*)NULL);
         process(i,u*v,staTm,endTm);
+    }
+    for(size_t i=0;i<I.rows;i++){
+        for(size_t j=0;j<I.cols;j++){
+            for(size_t c=0;c<3;c++){
+                if(S.ptr<cv::Vec3f>(i)[j][c]>100){
+                    S.ptr<cv::Vec3f>(i)[j][c]/=10.;
+                    S.ptr<cv::Vec3f>(i)[j][c]+=40.;
+                }
+            }
+        }
     }
     return S;
 }
@@ -138,23 +165,10 @@ cv::Mat Scatter::compensateI(const cv::Mat &R,const cv::Mat &S){
  * @return I_next: the compensated image.
  */
 cv::Mat Scatter::compensateImg(const cv::Mat& R){
-
     cv::Mat S=computeScatter(R);
     cv::Mat I=compensateI(R,S);
-//    cv::Mat S_next=computeScatter(I);
-//    cv::Mat I_next=compensateI(R,S_next);
-//    size_t count=2;
-//    while(!terminate(I,I_next) && count<=7){
-//        I=I_next;
-//        S_next=computeScatter(I);
-//        I_next=compensateI(R,S_next);
-//        count++;
-//    }
-//    std::cout<<I_next<<std::endl;
-//    I_next.convertTo(I_next,CV_8UC3);
-//    return I_next;
-    I.convertTo(I,CV_8UC3);
-    return I;
+    cv::Mat S_next=computeScatter(I);
+    return R-S_next;
 }
 
 /**
@@ -165,24 +179,17 @@ cv::Mat Scatter::compensateImg(const cv::Mat& R){
  * @return true or flase.
  */
 bool Scatter::terminate(const cv::Mat I,const cv::Mat I_next){
-
     cv::Mat detaI=I_next-I;
-
     size_t cols=detaI.cols;
-
     size_t rows=detaI.rows;
-
     double ave=0;
-
     for(size_t i=0;i<rows;i++){
-
         for(size_t j=0;j<cols;j++){
-
             ave+=(detaI.ptr<cv::Vec3f>(i)[j][0]+detaI.ptr<cv::Vec3f>(i)[j][1]+detaI.ptr<cv::Vec3f>(i)[j][2])/cols*rows*3;
         }
     }
     printf("average = %lf\n",ave);
-    if(ave<1) return true;
+    if(ave<2 && ave>-2) return true;
     else return false;
 }
 

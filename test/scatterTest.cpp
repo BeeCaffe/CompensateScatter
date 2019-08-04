@@ -22,6 +22,12 @@ void TestFij(){
     printf("DONE!");
 }
 
+void TestRadiosity(){
+    Scatter scatter=Scatter();
+    Eigen::MatrixXf I=scatter.radiosity();
+    std::cout<<I<<std::endl;
+}
+
 void TestComputeScatter(){
     Scatter scatter=Scatter();
     cv::Mat img=cv::imread("resources/images/00061.jpg");
@@ -46,7 +52,8 @@ void TestCompensateI(){
 int main(int argc, char** argv){
 //    TestConstructor();
 //    TestFi();
-    TestFij();
+//    TestFij();
+    TestRadiosity();
 //    TestComputeScatter();
 //    TestCompensateI();
     return 0;

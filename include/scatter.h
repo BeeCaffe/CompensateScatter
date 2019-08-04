@@ -9,6 +9,7 @@
 #include <sys/types.h>
 #include <sys/stat.h>
 #include <vector>
+#include "Eigen/Dense"
 
 /**
  * This class is an implement version of paper "Compensating Indirect Scattering for immersive and Semi-Immersive
@@ -32,6 +33,9 @@ public:
     //two overload function of "computeF()",which is used to calculate the energy function of light I
     void onePatchF();
     void doublePatchF();
+
+    //slove the linear function of the radiosity B.
+    Eigen::MatrixXf radiosity();
 
     //calculates all patch's scatter of light.
     cv::Mat computeScatter(const cv::Mat& I);

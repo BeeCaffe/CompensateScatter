@@ -23,6 +23,8 @@ sys/stat.h
 -
 vector
 -
+Eigen/Dense
+/home/caffe/CLionProjects/CompensateScatter/include/Eigen/Dense
 
 /home/caffe/CLionProjects/CompensateScatter/include/utils.h
 map
@@ -39,12 +41,6 @@ time.h
 -
 unistd.h
 -
-
-/home/caffe/CLionProjects/CompensateScatter/main/main.cpp
-../include/scatter.h
-/home/caffe/CLionProjects/CompensateScatter/include/scatter.h
-../include/utils.h
-/home/caffe/CLionProjects/CompensateScatter/include/utils.h
 
 /home/caffe/CLionProjects/CompensateScatter/src/scatter.cpp
 ../include/scatter.h
